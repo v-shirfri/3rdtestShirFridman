@@ -1,0 +1,164 @@
+.meeting-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+/* Claymorphism */
+.clay {
+  box-shadow:
+    6px 6px 0px 2px rgba(0, 0, 0, 0.08),
+    0 4px 24px rgba(30, 58, 95, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.meeting-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    8px 8px 0px 3px rgba(0, 0, 0, 0.1),
+    0 8px 32px rgba(30, 58, 95, 0.14);
+}
+
+/* Status coloring */
+.card-upcoming {
+  background: linear-gradient(135deg, #fff8ee 0%, #fff3e0 100%);
+  border-top: 4px solid #f97316;
+}
+
+.card-past {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-top: 4px solid #22c55e;
+}
+
+.card-status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.22rem 0.7rem;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.card-upcoming .card-status-badge {
+  background: #fed7aa;
+  color: #c2410c;
+}
+
+.card-past .card-status-badge {
+  background: #bbf7d0;
+  color: #15803d;
+}
+
+.card-header {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-id {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.card-group {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.card-description {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e3a5f;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.card-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem 1.2rem;
+}
+
+.card-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.info-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.info-value {
+  font-size: 0.91rem;
+  color: #1e3a5f;
+  font-weight: 500;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.3rem;
+}
+
+.btn-icon {
+  flex: 1;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.12s;
+}
+
+.btn-edit {
+  background: #e8f0fe;
+  color: #1a56a0;
+}
+
+.btn-edit:hover {
+  background: #d0e2fd;
+  transform: scale(1.02);
+}
+
+.btn-delete {
+  background: #fdecea;
+  color: #b91c1c;
+}
+
+.btn-delete:hover {
+  background: #fbd5d5;
+  transform: scale(1.02);
+}
+
+/* Highlight pulse after add/update navigation */
+.card-highlighted {
+  animation: highlightPulse 3.5s ease forwards;
+}
+
+@keyframes highlightPulse {
+  0%, 30% {
+    box-shadow: 0 0 0 3px #3b82f6, 8px 8px 0px 2px rgba(0, 0, 0, 0.1);
+    border-color: #93c5fd;
+  }
+  100% {
+    box-shadow: 6px 6px 0px 2px rgba(0, 0, 0, 0.08), 0 4px 24px rgba(30, 58, 95, 0.1);
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+}
